@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel Dashboard - Bhromon Sathi</title>
+  <link rel="stylesheet" href="hotel-dashboard.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <h1 class="logo">Bhromon Sathi</h1>
+    <div class="topbar-right">
+      <span>Hotel Sea Pearl (HTL-1024)</span>
+      <a href="login.html" class="logout">Log out</a>
+    </div>
+  </header>
+
+  <div class="main">
+
+    <nav class="sidebar">
+      <a href="#overview">Overview</a>
+      <a href="#bookings">Bookings</a>
+      <a href="#rooms">My Rooms</a>
+      <a href="#addRoom">Add Room</a>
+      <a href="#profile">Hotel Profile</a>
+    </nav>
+
+    <div class="content">
+
+      <section id="overview">
+        <h2>Welcome, Hotel Manager</h2>
+        <div class="cards">
+          <div class="card">
+            <p>Total Rooms</p>
+            <h3>39</h3>
+          </div>
+          <div class="card">
+            <p>Total Bookings</p>
+            <h3>7</h3>
+          </div>
+          <div class="card">
+            <p>Pending</p>
+            <h3>3</h3>
+          </div>
+          <div class="card">
+            <p>This Month Income</p>
+            <h3>৳ 54,600</h3>
+          </div>
+        </div>
+      </section>
+
+      <section id="bookings">
+        <h2>Recent Bookings</h2>
+        <table>
+          <tr>
+            <th>Guest</th>
+            <th>Room</th>
+            <th>Check-in</th>
+            <th>Nights</th>
+            <th>Status</th>
+          </tr>
+          <tr>
+            <td>Shahriar Amin</td>
+            <td>Deluxe Sea View</td>
+            <td>12 Dec 2026</td>
+            <td>2</td>
+            <td><span class="status pending">Pending</span></td>
+          </tr>
+          <tr>
+            <td>Jannatul Naim</td>
+            <td>Family Suite</td>
+            <td>15 Dec 2026</td>
+            <td>3</td>
+            <td><span class="status confirmed">Confirmed</span></td>
+          </tr>
+          <tr>
+            <td>Tahsinur Rahman</td>
+            <td>Standard Double</td>
+            <td>18 Dec 2026</td>
+            <td>1</td>
+            <td><span class="status pending">Pending</span></td>
+          </tr>
+          <tr>
+            <td>Nashib Khan</td>
+            <td>Deluxe Sea View</td>
+            <td>20 Dec 2026</td>
+            <td>2</td>
+            <td><span class="status confirmed">Confirmed</span></td>
+          </tr>
+        </table>
+      </section>
+
+      <section id="rooms">
+        <h2>My Rooms</h2>
+        <table id="roomTable">
+          <tr>
+            <th>Room Name</th>
+            <th>Type</th>
+            <th>Price / Night</th>
+            <th>Guests</th>
+            <th>Available</th>
+          </tr>
+          <tr>
+            <td>Deluxe Sea View</td>
+            <td>Deluxe</td>
+            <td>৳ 6,500</td>
+            <td>2</td>
+            <td>8</td>
+          </tr>
+          <tr>
+            <td>Family Suite</td>
+            <td>Suite</td>
+            <td>৳ 9,800</td>
+            <td>4</td>
+            <td>5</td>
+          </tr>
+          <tr>
+            <td>Standard Double</td>
+            <td>Standard</td>
+            <td>৳ 3,800</td>
+            <td>2</td>
+            <td>12</td>
+          </tr>
+        </table>
+      </section>
+
+      <section id="addRoom">
+        <h2>Add New Room</h2>
+        <form id="roomForm" class="box" novalidate>
+
+          <div class="form-group">
+            <label for="roomName">Room Name</label>
+            <input type="text" id="roomName" placeholder="e.g. Deluxe Hill View">
+            <span class="error" id="roomNameError"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="roomType">Room Type</label>
+            <select id="roomType">
+              <option value="">-- Select Type --</option>
+              <option value="Standard">Standard</option>
+              <option value="Deluxe">Deluxe</option>
+              <option value="Suite">Suite</option>
+            </select>
+            <span class="error" id="roomTypeError"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="price">Price per Night (Taka)</label>
+            <input type="text" id="price" placeholder="e.g. 5000">
+            <span class="error" id="priceError"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="guests">Max Guests</label>
+            <input type="text" id="guests" placeholder="1 to 6">
+            <span class="error" id="guestsError"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="available">Available Rooms</label>
+            <input type="text" id="available" placeholder="e.g. 10">
+            <span class="error" id="availableError"></span>
+          </div>
+
+          <div class="form-group">
+            <label>Facilities</label>
+            <div class="options">
+              <label><input type="checkbox" name="facility" value="AC"> AC</label>
+              <label><input type="checkbox" name="facility" value="WiFi"> WiFi</label>
+              <label><input type="checkbox" name="facility" value="Breakfast"> Breakfast</label>
+              <label><input type="checkbox" name="facility" value="Sea View"> Sea View</label>
+            </div>
+            <span class="error" id="facilityError"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="description">Description</label>
+            <textarea id="description" rows="3" placeholder="Write about the room"></textarea>
+            <span class="error" id="descriptionError"></span>
+          </div>
+
+          <button type="submit">Add Room</button>
+        </form>
+      </section>
+
+      <section id="profile">
+        <h2>Hotel Profile</h2>
+        <form id="profileForm" class="box" novalidate>
+
+          <div class="form-group">
+            <label for="hotelName">Hotel Name</label>
+            <input type="text" id="hotelName" value="Hotel Sea Pearl">
+            <span class="error" id="hotelNameError"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="hotelEmail">Hotel Email</label>
+            <input type="text" id="hotelEmail" value="info@seapearl.com">
+            <span class="error" id="hotelEmailError"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="hotelPhone">Phone Number</label>
+            <input type="text" id="hotelPhone" value="01812345678">
+            <span class="error" id="hotelPhoneError"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="hotelAddress">Address</label>
+            <textarea id="hotelAddress" rows="3">Kolatoli Road, Cox's Bazar</textarea>
+            <span class="error" id="hotelAddressError"></span>
+          </div>
+
+          <button type="submit">Save Profile</button>
+        </form>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="hotel-dashboard.js"></script>
+</body>
+</html>

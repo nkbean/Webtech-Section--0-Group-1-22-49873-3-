@@ -1,0 +1,125 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f2f5;
+  margin: 0;
+}
+
+.page {
+  display: flex;
+  min-height: 100vh;
+}
+
+.left-side {
+  width: 50%;
+  background-image: url("sajek.jpg");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.logo {
+  margin: 0;
+  font-size: 26px;
+}
+
+.left-text p {
+  margin: 0;
+}
+
+.left-text h2 {
+  color: white;
+  font-size: 32px;
+  margin: 5px 0 0 0;
+}
+
+.right-side {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 420px;
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+h2 {
+  margin-top: 0;
+  margin-bottom: 5px;
+  color: #115e43;
+}
+
+.sub-text {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #666;
+}
+
+.type-btn {
+  display: block;
+  padding: 15px 18px;
+  margin-bottom: 12px;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.type-btn:hover {
+  border-color: #115e43;
+  background-color: #e6f2ed;
+}
+
+.type-title {
+  display: block;
+  font-size: 18px;
+  font-weight: bold;
+  color: #115e43;
+}
+
+.type-text {
+  display: block;
+  font-size: 14px;
+  color: #666;
+  margin-top: 4px;
+  font-weight: normal;
+}
+
+.bottom-text {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+.bottom-text a {
+  color: #115e43;
+  font-weight: bold;
+}
+
+@media (max-width: 700px) {
+  .page {
+    flex-direction: column;
+  }
+
+  .left-side,
+  .right-side {
+    width: 100%;
+  }
+
+  .left-side {
+    height: 200px;
+  }
+}
